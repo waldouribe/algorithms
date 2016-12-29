@@ -17,8 +17,25 @@ def selection_sort(a):
         swap(a, i, min_index)
     return a
 
-def quicksort(a)
-    return a
+def quicksort(a):
+    rec_quicksort(a, 0, len(a)-1)
+
+def rec_quicksort(a, i, j):
+    if i < j:
+        pivot = partition(a, i, j)
+        rec_quicksort(a, i, pivot-1)
+        rec_quicksort(a, pivot+1, j)
+
+def partition(a, i, j):
+    pivot = a[j]
+    left = i
+
+    for k in range(i, j):
+        if a[k] <= pivot:
+            swap(a, k, left)
+            left += 1
+    swap(a, j, left)
+    return left
 
 def swap(a, i, j):
     aux = a[i]
