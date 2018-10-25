@@ -26,5 +26,11 @@ class TestBinarySearch(unittest.TestCase):
         answer = binary_search(needle, haystack)
         self.assertEqual(answer, 2)
 
+    def test_not_found(self):
+        needle = 'z'
+        haystack = ['a', 'b', 'c', 'd', 'e']
+        answer = binary_search(needle, haystack)
+        self.assertEqual(answer, -1)
+
 if __name__ == '__main__':
     unittest.main()

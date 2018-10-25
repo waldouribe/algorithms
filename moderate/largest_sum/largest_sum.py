@@ -1,12 +1,8 @@
 def largest_sum(array):
-    max_sum = array[0]
-    sumatory = max_sum
-    for i in range(1, len(array)):
-        sumatory += array[i]
-        if sumatory >= max_sum:
-            max_sum = sumatory
-        if array[i] >= max_sum:
-            sumatory = array[i]
-            max_sum = sumatory
+    current_sum = current_largest_sum = array[0]
 
-    return max_sum
+    for i in range(1, len(array)):
+        current_sum = max(array[i], array[i] + current_sum)
+        current_largest_sum = max(current_largest_sum, current_sum)
+
+    return current_largest_sum

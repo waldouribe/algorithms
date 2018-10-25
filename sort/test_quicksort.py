@@ -22,7 +22,7 @@ class TestQuickSort(unittest.TestCase):
         answer = partition(a, 0, len(a)-1)
         self.assertEquals(answer, 0)
 
-    def test_partition_two_elements(self):
+    def test_partition_right_two_elements(self):
         a = [4, 5]
         answer = partition(a, 0, len(a)-1)
         self.assertEquals(answer, 1)
